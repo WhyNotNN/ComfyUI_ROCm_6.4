@@ -8,7 +8,7 @@
 - Генерация в 4 раза быстрее, чем через DirectML (20 сек вместо 80).
 - В 2 раза быстрее по сравнению с ROCm 6.3 (20 сек вместо 40).
 - Более стабильная работа, чем с ROCm 6.3.
-- Проблема с утечкой VRAM сохраняется во всех вариантах.
+- Проблема с мусором в VRAM сохраняется во всех вариантах.
 
 ---
 
@@ -17,7 +17,7 @@
 - Видеокарта AMD: серия RX 6000 / 7000 / 9000 / Pro.
 - Ubuntu 24.04 LTS (желательно установленная на NVMe).
 - 16–32 ГБ оперативной памяти.
-- Базовые знания Linux.
+- Минимальные знания Linux. (если вы совсем новичек, так-же попробуйте)
 
 ---
 
@@ -78,6 +78,17 @@ source venv/bin/activate                                      # активиру
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4
 # установка nightly-версий PyTorch, torchvision и torchaudio с поддержкой ROCm 6.4
 ```
+Если 6.4 не работает, вот ссылки на 6.3,6.2 тут.
+```bash
+pip uninstall torch torchvision torchaudio
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3
+# установка PyTorch, torchvision и torchaudio с поддержкой ROCm 6.3
+```
+```bash
+pip uninstall torch torchvision torchaudio
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.2
+# установка PyTorch, torchvision и torchaudio с поддержкой ROCm 6.2
+```
 
 ### Установка зависимостей проекта
 
@@ -94,18 +105,58 @@ pip install -r requirements.txt   # установка всех зависимо
 ```bash
 python main.py   # запускаем ComfyUI вручную для теста
 ```
+Если все в порядке, закрываем терминал
 
 ### Рекомендуемый скрипт запуска
 
 Создаем скрипт `start.sh`:
 
 ```bash
-cat << 'EOF' > start.sh
+cd ComfyUI_ROCm_6.4                                           # переходим в папку проекта
+```
+<details>
+<summary>Для карт с памятью объемом 16gb и больше</summary>
+
+```bash
+# копируйте все что между полос
+_____
+cat << 'EOF' > start.sh                                    
 #!/bin/bash
 source venv/bin/activate
 TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1 python main.py --use-pytorch-cross-attention
 EOF
+_____
 ```
+</details>
+<details>
+<summary>Для карт с объемом памяти 12gb и меньше</summary>
+  
+```bash
+# копируйте все что между полос
+_____
+cat << 'EOF' > start.sh                                    
+#!/bin/bash
+source venv/bin/activate
+TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1 HSA_OVERRIDE_GFX_VERSION=10.3.0 python main.py python main.py --use-pytorch-cross-attention --lowvram
+EOF
+_____
+
+```
+</details>
+<details>
+<summary>Для карт RX7000 с объемом памяти 12gb и меньше</summary>
+  
+```bash
+# копируйте все что между полос
+_____
+cat << 'EOF' > start.sh                                    
+#!/bin/bash
+source venv/bin/activate
+TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1 HSA_OVERRIDE_GFX_VERSION=11.0.0 python main.py python main.py --use-pytorch-cross-attention --lowvram
+EOF
+_____
+```
+</details>
 
 Делаем скрипт исполняемым и запускаем:
 
