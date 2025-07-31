@@ -241,5 +241,59 @@ chmod +x start.sh    # даем право на выполнение
 ---
 
 
+<sub>
+
+---
+
+<details>
+<summary>для поиска</summary>
+
+comfyui amd rocm install  
+как установить comfyui на amd  
+comfyui rocm 6.4 setup  
+comfyui rx 6000 инструкция  
+установка comfyui без nvidia  
+comfyui amd rx7000 support  
+comfyui amd linux скрипт  
+comfyui на видеокартах amd  
+comfyui radeon pro linux  
+comfyui установка rocm gpu  
+как запустить comfyui на amd  
+comfyui не работает на amd  
+установка comfyui под linux  
+comfyui amd gpu не запускается  
+rocm comfyui инструкция  
+comfyui без nvidia под linux  
+ошибка comfyui amd linux  
+как поставить comfyui в ubuntu  
+rocm 6.4 rx 6800 установка  
+rocm 6.4 установка под ubuntu  
+rocm поддержка видеокарт  
+amd rocm bash install  
+rocm для stable diffusion  
+radeon rocm guide  
+rocm 6.4 linux support rx6900  
+установка rocm для comfyui  
+rocm torch установка  
+comfyui installer amd  
+comfyui auto install rocm  
+comfyui bash script amd gpu  
+comfyui automated setup linux  
+comfyui install script ubuntu amd  
+linux comfyui install shell  
+comfyui bash установка  
+comfyui установка одной командой  
+comfyui rocm shell script  
+comfyui без python ошибок  
+как собрать comfyui под amd  
+comfyui custom launch flags rocm  
+torch rocm 6.4 install linux  
+comfyui lowvram amd  
+comfyui amd tweaks  
+comfyui не запускается с amd  
+как запустить comfyui с rocm  
+comfyui rocm override gfx  
+</details>
+</sub>
 
 
