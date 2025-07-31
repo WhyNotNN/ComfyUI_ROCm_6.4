@@ -4,7 +4,7 @@
 
 Автоматическая установка одним файлом
 !!ТЕСТОВО!!
-https://raw.githubusercontent.com/WhyNotNN/ComfyUI_ROCm_6.4/g.sh
+[Скачать установочный скрипт](https://raw.githubusercontent.com/WhyNotNN/ComfyUI_ROCm_6.4/master/tests/g.sh)
 
 ---
 
