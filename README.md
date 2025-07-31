@@ -72,13 +72,15 @@ python3 -m venv venv                                          # создаем �
 source venv/bin/activate                                      # активируем окружение
 ```
 
-### Установка PyTorch с поддержкой ROCm 6.4
+### Установка PyTorch с поддержкой ROCm 6.4 (рекомендуется)
 
 ```bash
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4
 # установка nightly-версий PyTorch, torchvision и torchaudio с поддержкой ROCm 6.4
 ```
-Если 6.4 не работает, вот ссылки на 6.3,6.2 тут.
+<details>
+<summary>Если 6.4 не работает, ссылки на 6.3 и 6.2 тут.</summary>
+  
 ```bash
 pip uninstall torch torchvision torchaudio
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3
@@ -89,6 +91,7 @@ pip uninstall torch torchvision torchaudio
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.2
 # установка PyTorch, torchvision и torchaudio с поддержкой ROCm 6.2
 ```
+</details>
 
 ### Установка зависимостей проекта
 
