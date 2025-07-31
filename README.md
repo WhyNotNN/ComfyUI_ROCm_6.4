@@ -2,6 +2,10 @@
 Поддержка ComfyUI на видеокартах AMD через ROCm 6.4.  
 Тестировалось на RX 6900 XT.
 
+Автоматическая установка одним файлом
+!!ТЕСТОВО!!
+https://raw.githubusercontent.com/WhyNotNN/ComfyUI_ROCm_6.4/g.sh
+
 ---
 
 ## Преимущества ROCm 6.4
