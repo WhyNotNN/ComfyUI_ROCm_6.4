@@ -110,13 +110,11 @@ pip install --pre torch torchvision torchaudio --index-url https://download.pyto
 <details>
 <summary>Если 6.4 не работает, ссылки на 6.3 и 6.2 тут.</summary>
   
-```bash
-pip uninstall torch torchvision torchaudio
+```bas
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3
 # установка PyTorch, torchvision и torchaudio с поддержкой ROCm 6.3
 ```
 ```bash
-pip uninstall torch torchvision torchaudio
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.2
 # установка PyTorch, torchvision и torchaudio с поддержкой ROCm 6.2
 ```
